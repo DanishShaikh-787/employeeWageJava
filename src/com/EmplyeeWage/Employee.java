@@ -1,39 +1,37 @@
 package com.EmplyeeWage;
 
 public class Employee {
-	
+
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
-	
+	public static final int empRatePerHours = 20;
+	public static final int Num_Working_Days=20;
+	public static final int Num_Working_Hours=100;
+
 	public static void main(String[] args) {
-		
-			int empRatePerHours = 20;
-			int Full_Time_Hour=8;
-			int Part_Time_Hour=4;
-			int TotalWorkingDays=20;
-			int OneDaySalary=0;
+
+			int empHours=0;
+			int TotalWorkingDays=0;
+			int TotalWorkingHours=0;
 			int TotalSalary=0;
-			int i=0;
-			
-			while (i < TotalWorkingDays){
+
+			while (TotalWorkingDays < Num_Working_Days || TotalWorkingHours < Num_Working_Hours){
 				int empCheck = (int) (Math.floor(Math.random() * 10) % 3 );
-					switch (empCheck) { 
+					switch (empCheck) {
 					case IS_FULL_TIME :
-						OneDaySalary = empRatePerHours*Full_Time_Hour;
-						System.out.println("Employee Full Time Salary :"+OneDaySalary);
+						empHours=8;
 						break;
 					case IS_PART_TIME :
-						OneDaySalary = empRatePerHours*Part_Time_Hour;
-						System.out.println("Employee Full Time Salary :"+OneDaySalary);
+						empHours=4;
 						break;
 					default :
-						OneDaySalary = 0;
-						System.out.println("Employee IS Absent        :"+OneDaySalary);
+						empHours=0;
 						break;
 					}
-				TotalSalary=TotalSalary+OneDaySalary;
-				i++ ;
+				TotalWorkingHours=(TotalWorkingHours+empHours);
+				TotalWorkingDays++ ;
 				}
-			System.out.println("Total 20 Days Salary Is : "+TotalSalary);
+			TotalSalary=empRatePerHours*TotalWorkingHours;
+			System.out.println("Total Days Salary Is : "+TotalSalary);
 			}
-	}
+}
