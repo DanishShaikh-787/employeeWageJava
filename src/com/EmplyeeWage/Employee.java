@@ -4,15 +4,16 @@ public class Employee {
 
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
-	public static final int empRatePerHours = 20;
-	public static final int Num_Working_Days=20;
-	public static final int Num_Working_Hours=100;
-	
+//	public static final int empRatePerHours = 20;
+//	public static final int Num_Working_Days=20;
+//	public static final int Num_Working_Hours=100;
+//	
 	public static void main(String[] args) {
-		workingHours();
+		workingHours("TATA",20,22,80);
+		workingHours("JohnDeere",22,24,90);
 		}
 	
-	public static void workingHours() {
+	public static void workingHours(String name, int empRatePerHours, int Num_Working_Days, int Num_Working_Hours) {
 		int TotalWorkingDays=0;
 		int TotalWorkingHours=0;
 		int TotalSalary=0;
@@ -36,6 +37,6 @@ public class Employee {
 			TotalSalary=empRatePerHours*TotalWorkingHours;
 			System.out.println("Number Of Working Days :"+TotalWorkingDays);
 			System.out.println("Number Of Working Hours :"+TotalWorkingHours);
-			System.out.println("Total Days Salary Is : "+TotalSalary);
+			System.out.println("Company Name:" +name+  "Total Days Salary Is : "+TotalSalary);
 	}	
 }
