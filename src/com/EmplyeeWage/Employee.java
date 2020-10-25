@@ -4,16 +4,32 @@ public class Employee {
 
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
+	private static String name;
+	private static int empRatePerHours;
+	private static int Num_Working_Days;
+	private static int Num_Working_Hours;
 //	public static final int empRatePerHours = 20;
 //	public static final int Num_Working_Days=20;
 //	public static final int Num_Working_Hours=100;
-//	
+//
+public Employee(String name, int empRatePerHours, int Num_Working_Days, int Num_Working_Hours) {
+		this.name=name;
+		this.empRatePerHours=empRatePerHours;
+		this.Num_Working_Days=Num_Working_Days;
+		this.Num_Working_Hours=Num_Working_Hours;
+	
+	}
 	public static void main(String[] args) {
-		workingHours("TATA",20,22,80);
-		workingHours("JohnDeere",22,24,90);
+		Employee Tata = new Employee("Tata",20,22,90);
+		Employee.workingHours();
+		
+		Employee TOI = new Employee("TOI",22,22,50);
+		Employee.workingHours();
+	
 		}
 	
-	public static void workingHours(String name, int empRatePerHours, int Num_Working_Days, int Num_Working_Hours) {
+//	public static void workingHours(String name, int empRatePerHours, int Num_Working_Days, int Num_Working_Hours) 
+	public static void workingHours(){
 		int TotalWorkingDays=0;
 		int TotalWorkingHours=0;
 		int TotalSalary=0;
